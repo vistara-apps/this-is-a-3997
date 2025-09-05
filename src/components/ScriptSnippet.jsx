@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { MessageSquare, Lock, Bookmark, BookmarkCheck } from 'lucide-react'
+import { MessageSquare, Lock, Bookmark, Check } from 'lucide-react'
 import { useUser } from '../contexts/UserContext'
 
 const ScriptSnippet = ({ script, variant = 'default' }) => {
@@ -50,7 +50,10 @@ const ScriptSnippet = ({ script, variant = 'default' }) => {
             className="ml-3 p-2 hover:bg-bg rounded-md transition-colors"
           >
             {isSaved ? (
-              <BookmarkCheck className="w-5 h-5 text-primary" />
+              <div className="relative">
+                <Bookmark className="w-5 h-5 text-primary" />
+                <Check className="w-3 h-3 text-primary absolute top-0.5 left-0.5" />
+              </div>
             ) : (
               <Bookmark className="w-5 h-5 text-textSecondary" />
             )}
